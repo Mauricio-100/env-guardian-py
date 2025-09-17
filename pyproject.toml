@@ -1,0 +1,24 @@
+build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "env-guardian-py"
+version = "1.0.0"
+authors = [
+  { name="mauriciotukss2", email="didimbanza714@gmail.com" },
+]
+description = "Un gestionnaire de configuration simple et robuste qui valide et type les variables d'environnement."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Operating System :: OS Independent",
+]
+keywords = ["env", "dotenv", "config", "validation", "environment"]
+
+[project.urls]
+Homepage = "https://github.com/Mauricio-100/env-guardian-py"
+Issues = "https://github.com/Mauricio-100/env-guardian-py/issues"
