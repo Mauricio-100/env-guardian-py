@@ -1,0 +1,37 @@
+# Nom du flux de travail qui apparaîtra dans l'onglet Actions
+name: Publish Python Package to PyPI
+
+# Déclencheur : ce flux se lance quand une "Release" est publiée sur GitHub
+on:
+  release:
+    types: [published]
+
+jobs:
+  pypi-publish:
+    name: Upload release to PyPI
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write # Essentiel pour la publication de confiance
+
+    steps:
+      # Étape 1: Récupère ton code depuis le dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Étape 2: Installe le langage Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Étape 3: Installe les outils nécessaires pour construire ton paquet
+      - name: Install build dependencies
+        run: pip install build
+
+      # Étape 4: Construit le paquet (crée le dossier "dist")
+      - name: Build package
+        run: python -m build
+
+      # Étape 5: Publie le paquet sur PyPI
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
