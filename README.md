@@ -1,5 +1,7 @@
 # Env-Guardian for Python
 
+<img width="1024" height="1024" alt="undefined - Imgur" src="https://github.com/user-attachments/assets/df8fc4e0-3379-4be6-b93a-4ccb71710203" />
+
 [![PyPI version](https://badge.fury.io/py/env-guardian-py.svg)](https://badge.fury.io/py/env-guardian-py)
 
 Un gestionnaire de configuration simple et robuste pour Python qui charge, valide et type les variables d'environnement à partir de fichiers `.env`. **Zéro dépendance externe.**
